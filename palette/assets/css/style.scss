@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    transition: 0.2s;
+}
+$controllerHeight: 80px;
+$controllerTop: 10px;
+
+#Main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 0.3s;
+    background-color: #000;
+    .controller {
+        position: fixed;
+        top: $controllerTop;
+        left: 50%;
+        width: 80%;
+        height: $controllerHeight;
+        border-radius: 0px;
+        padding: 20px 50px;
+        background-color: #ddd;
+        border: 2px solid rgb(100, 100, 100);
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .leftController,
+        .rightController {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .circle {
+                width: 40px;
+                height: 40px;
+                input {
+                    border: none;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .centerArea {
+            width: calc(100% - 100px);
+            height: 25px;
+        }
+    }
+    .copyArea {
+        position: fixed;
+        height: calc(100vh - 90px);
+        top: 90px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        #span {
+            cursor: pointer;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 40px;
+            font-family: "Fira Code", monospace;
+            color: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            transition: 0.3s ease-in-out;
+            &:hover {
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+}
+.alert {
+    padding: 20px 40px;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 1);
+    font-family: "Fira Code", monospace;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%);
+    transition: 0.7s ease-in-out;
+}
+.alert-fade {
+    opacity: 0;
+    visibility: visible;
+    pointer-events: none;
+}
